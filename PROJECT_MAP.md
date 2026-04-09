@@ -41,13 +41,13 @@
 - `styles/tokens.css` — CSS custom properties (`:root`).
 - `styles/base.css` — Reset/base rules, body, image, container, anchor offset primitives.
 - `styles/utilities.css` — Shared button and glow utility rules.
-- `styles/header.css` — Header, nav, burger, contacts, social icon rules.
+- `styles/header.css` — Header, nav, burger, contacts, and shared social button/icon rules (including local VK/TG SVG sizing in header/footer/mobile menu).
 - `styles/sections.css` — Shared section paddings and common section headings.
 - `styles/hero.css` — Hero-specific layout and component styling.
-- `styles/about.css` — About/author/stats styles; `.floating-accent` motion is intentionally disabled to avoid transform conflicts with hover lift.
-- `styles/benefits.css` — Carousel controls/cards/progress styles (section stays neutral while cards use subtle near-white surfaces, clearer borders, and soft resting shadows).
+- `styles/about.css` — About/author/stats styles including restrained quote-card heart accent; `.floating-accent` motion is intentionally disabled to avoid transform conflicts with hover lift.
+- `styles/benefits.css` — Carousel controls/cards/progress styles (section and resting cards stay neutral/transparent with border-led separation).
 - `styles/faq.css` — FAQ accordion and bottom CTA styles.
-- `styles/footer.css` — Footer layout, links, socials, metadata styles.
+- `styles/footer.css` — Footer layout, links, socials, metadata styles with top-aligned desktop columns and consistent intra-column spacing.
 - `styles/motion.css` — Reveal motion classes and reduced-motion overrides.
 - `styles/responsive.css` — Width breakpoint media queries (`1100px`, `768px`, `560px`).
 - `js/main.js` — All interactive behavior (menu, nav highlight/scrollspy, reveal/counters, carousel, FAQ).
