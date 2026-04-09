@@ -44,8 +44,8 @@
 - `styles/header.css` — Header, nav, burger, contacts, social icon rules.
 - `styles/sections.css` — Shared section paddings and common section headings.
 - `styles/hero.css` — Hero-specific layout and component styling.
-- `styles/about.css` — About/author/stats styles and section-local `floatCard` keyframes.
-- `styles/benefits.css` — Carousel controls/cards/progress styles.
+- `styles/about.css` — About/author/stats styles; `.floating-accent` motion is intentionally disabled to avoid transform conflicts with hover lift.
+- `styles/benefits.css` — Carousel controls/cards/progress styles (benefits cards are transparent at rest with no permanent card shadow).
 - `styles/faq.css` — FAQ accordion and bottom CTA styles.
 - `styles/footer.css` — Footer layout, links, socials, metadata styles.
 - `styles/motion.css` — Reveal motion classes and reduced-motion overrides.

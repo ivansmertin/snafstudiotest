@@ -120,9 +120,6 @@
         font-weight: 700;
     }
 
-    .mobile-menu-meta {
-        display: none !important;
-    }
 
     .hero-section {
         padding: 18px 0 40px 0;
@@ -186,9 +183,6 @@
         text-align: left;
     }
 
-    .floating-accent {
-        animation: none;
-    }
 
     .benefits-header {
         flex-direction: column;

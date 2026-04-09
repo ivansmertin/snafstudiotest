@@ -13,11 +13,14 @@ Use this after each frontend patch to guard against regressions.
 - [ ] Navigation links highlight/active state behaves correctly while scrolling.
 - [ ] Nav highlight pill animates on desktop hover/click.
 - [ ] Hero, About, Benefits, FAQ, Footer spacing and alignment look unchanged.
+- [ ] Benefits cards in resting state do not look like gray/tinted plates (no permanent card underlay).
+- [ ] Hover lift on stats/cards/FAQ feels stable (no jitter or slow post-reveal hover response).
 
 ## 3) Mobile layout (< 769px)
 - [ ] Burger button opens/closes menu.
 - [ ] Menu open state locks body scroll and closes after nav link click.
 - [ ] Mobile nav remains aligned and usable.
+- [ ] No sticky hover states on touch for buttons, phone, social icons, footer socials, or slider controls.
 
 ## 4) Navigation and anchors
 - [ ] Header links scroll to correct sections (`#services`, `#about`, `#value`, `#faq`).

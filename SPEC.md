@@ -47,6 +47,7 @@ This repository contains a single-page static website for **SNAF STUDIO** (Russi
 ## Current frontend stack
 - Semantic HTML5
 - Vanilla CSS with custom properties, media queries, transitions/animations, and CSS `@import`
+- Hover-driven lift effects are guarded by fine-pointer hover media queries to avoid sticky states on touch devices
 - Vanilla JavaScript (`js/main.js`) using DOM APIs and IntersectionObserver
 - Google Fonts (`Montserrat`) via external stylesheet link
 
@@ -56,3 +57,4 @@ This repository contains a single-page static website for **SNAF STUDIO** (Russi
 - **Medium risk:** adjusting carousel width/gap logic can break controls/progress calculations.
 - **Medium risk:** FAQ open/close animation depends on runtime height measurement.
 - **Medium risk:** reveal/counter behavior depends on IntersectionObserver thresholds and reduced-motion handling.
+- **Low risk:** `.surface-glow` hover/reveal transition timing depends on `styles/motion.css` post-reveal override targeting both direct and nested descendants.
