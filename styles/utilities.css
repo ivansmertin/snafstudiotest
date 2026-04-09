@@ -49,6 +49,7 @@
 }
 
 .surface-glow {
+    will-change: transform;
     transition:
         transform var(--motion-duration-base) var(--motion-ease),
         box-shadow var(--motion-duration-base) var(--motion-ease),
