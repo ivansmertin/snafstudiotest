@@ -173,9 +173,11 @@
         color 0.22s ease;
 }
 
-.phone:hover {
-    transform: translateY(-1px);
-    color: var(--accent-hover);
+@media (hover: hover) and (pointer: fine) {
+    .phone:hover {
+        transform: translateY(-1px);
+        color: var(--accent-hover);
+    }
 }
 
 .socials,
@@ -206,12 +208,14 @@
         color 0.22s ease;
 }
 
-.social-icon:hover,
-.footer-social:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 28px rgba(14, 165, 233, 0.18);
-    border-color: rgba(14, 165, 233, 0.28);
-    color: var(--accent-hover);
+@media (hover: hover) and (pointer: fine) {
+    .social-icon:hover,
+    .footer-social:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 28px rgba(14, 165, 233, 0.18);
+        border-color: rgba(14, 165, 233, 0.28);
+        color: var(--accent-hover);
+    }
 }
 
 .social-icon--vk span,

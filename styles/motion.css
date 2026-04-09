@@ -22,7 +22,8 @@
 .reveal-stagger.is-revealed > *:nth-child(4) { transition-delay: 0.24s; }
 
 /* Restore fast surface-glow transition after reveal completes */
-.reveal-stagger.is-revealed > .surface-glow {
+.reveal-stagger.is-revealed > .surface-glow,
+.reveal-stagger.is-revealed .surface-glow {
     transition:
         transform var(--motion-duration-base) var(--motion-ease),
         box-shadow var(--motion-duration-base) var(--motion-ease),
