@@ -22,11 +22,12 @@
 4. Cleanup.
 
 ## Safe workflow for future changes
-1. Read `index.html`, `styles.css`, and referenced assets to understand current behavior.
-2. Map affected selectors/anchors/interactive elements before editing.
-3. Make incremental edits in small, reviewable commits.
-4. Re-check desktop/mobile layout, nav anchors, burger menu, carousel, FAQ, and console output.
-5. If behavior could be impacted, validate manually in browser before finishing.
+1. Read `index.html`, `styles/main.css`, `js/main.js`, and referenced assets to understand current behavior.
+2. Use `styles.css` as a legacy baseline reference when validating module parity.
+3. Map affected selectors/anchors/interactive elements before editing.
+4. Make incremental edits in small, reviewable commits.
+5. Re-check desktop/mobile layout, nav anchors, burger menu, carousel, FAQ, and console output.
+6. If behavior could be impacted, validate manually in browser before finishing.
 
 ## Conservative refactor guidance
 - Keep DOM structure, CSS class names, and section IDs stable during refactors unless the task requires changing them.

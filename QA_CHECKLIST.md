@@ -3,22 +3,25 @@
 Use this after each frontend patch to guard against regressions.
 
 ## 1) Global sanity
-- [ ] Page loads without missing styles.
+- [ ] `index.html` loads `styles/main.css` with no 404.
+- [ ] `index.html` loads `js/main.js` with `defer` and no 404.
 - [ ] No broken image links (check logo, portrait, icons, decorative graphics).
 - [ ] Browser console has no errors.
 
 ## 2) Desktop layout (>= 769px)
 - [ ] Sticky header stays visible on scroll and does not overlap content incorrectly.
 - [ ] Navigation links highlight/active state behaves correctly while scrolling.
+- [ ] Nav highlight pill animates on desktop hover/click.
 - [ ] Hero, About, Benefits, FAQ, Footer spacing and alignment look unchanged.
 
 ## 3) Mobile layout (< 769px)
 - [ ] Burger button opens/closes menu.
 - [ ] Menu open state locks body scroll and closes after nav link click.
-- [ ] Mobile nav, contact info, and social links are readable and usable.
+- [ ] Mobile nav remains aligned and usable.
 
 ## 4) Navigation and anchors
 - [ ] Header links scroll to correct sections (`#services`, `#about`, `#value`, `#faq`).
+- [ ] Footer/top links scroll correctly (`#top`).
 - [ ] Scroll offset is correct (section headings not hidden under sticky header).
 
 ## 5) CTA and links
@@ -26,13 +29,20 @@ Use this after each frontend patch to guard against regressions.
 - [ ] External links with new tabs still open correctly where expected.
 
 ## 6) Interactive components
-- [ ] Reveal/scroll animations trigger correctly (or remain stable with reduced motion).
+- [ ] Reveal/scroll animations trigger correctly.
 - [ ] Counter animation in stats section reaches expected values.
+- [ ] With reduced motion enabled, counters render final values immediately and transitions are effectively disabled.
 - [ ] Benefits carousel prev/next buttons scroll cards as expected.
 - [ ] Carousel progress indicator updates while scrolling.
-- [ ] FAQ accordion opens/closes correctly; ARIA-expanded behavior remains coherent.
+- [ ] FAQ accordion opens/closes correctly; only one item remains open at a time; item 3 is open by default.
 
-## 7) Visual regression check
-- [ ] Compare before/after quickly at desktop + mobile widths.
+## 7) Asset/path checks
+- [ ] About wave background is visible (path resolves from module CSS via `../images/wave.svg`).
+
+## 8) Breakpoint regression check
+- [ ] Layout remains identical at `1100px`, `768px`, and `560px` breakpoints.
 - [ ] No unintended typography/color/spacing/shadow changes.
 - [ ] No clipping/overflow issues introduced.
+
+## 9) Static deployment check
+- [ ] Site works when opening `index.html` directly as static files (no build tooling required).
