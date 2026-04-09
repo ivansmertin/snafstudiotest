@@ -10,6 +10,13 @@ This repository contains a single-page static website for **SNAF STUDIO** (Russi
 - **Assets:** Local SVG/PNG files under `images/` referenced directly from HTML/CSS.
 - **Runtime model:** Client-side only, no backend or build pipeline.
 
+## Current UX baseline (April 2026 polish pass)
+- Section title-to-content spacing is intentionally roomier and uses a more consistent vertical rhythm across About, Benefits, and FAQ blocks.
+- Hero first-screen density is slightly tightened (moderately smaller H1 and reduced internal spacing) to fit laptop-height viewports better without changing structure/content.
+- About block typography is simplified: muted stat card heading now uses primary text color, quote card no longer includes a decorative icon.
+- Benefits section keeps a neutral page-level background; card surfaces now carry subtle near-white fill, clearer border contrast, and a soft resting shadow for readability.
+- FAQ now initializes with all items closed; items toggle independently while preserving ARIA state and height animation.
+
 ## Important constraints
 - Existing visual appearance and interaction behavior are baseline and must not regress.
 - Section IDs are used for anchor navigation and scrollspy; changing them is high risk.
@@ -55,6 +62,6 @@ This repository contains a single-page static website for **SNAF STUDIO** (Russi
 - **High risk:** changing class names/IDs used by JS handlers.
 - **High risk:** modifying sticky header offset logic and anchor scroll behavior.
 - **Medium risk:** adjusting carousel width/gap logic can break controls/progress calculations.
-- **Medium risk:** FAQ open/close animation depends on runtime height measurement.
+- **Medium risk:** FAQ open/close animation depends on runtime height measurement and per-item toggle state sync.
 - **Medium risk:** reveal/counter behavior depends on IntersectionObserver thresholds and reduced-motion handling.
 - **Low risk:** `.surface-glow` hover/reveal transition timing depends on `styles/motion.css` post-reveal override targeting both direct and nested descendants.

@@ -317,12 +317,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const syncOpenFaqHeight = () => {
-        const openItem = document.querySelector(".faq-item.is-open");
-        if (!openItem) return;
-        const panel = openItem.querySelector(".faq-answer");
-        if (panel) {
+        document.querySelectorAll(".faq-item.is-open .faq-answer").forEach((panel) => {
             panel.style.height = `${panel.scrollHeight}px`;
-        }
+        });
     };
 
     const initFaq = () => {
@@ -339,23 +336,14 @@ document.addEventListener("DOMContentLoaded", () => {
             panel.style.height = open ? `${panel.scrollHeight}px` : "0px";
         };
 
-        const openItem = items.find((item) => item.classList.contains("is-open")) || items[2] || null;
-
-        items.forEach((item) => {
-            applyState(item, item === openItem);
-        });
+        items.forEach((item) => applyState(item, item.classList.contains("is-open")));
 
         items.forEach((item) => {
             const button = item.querySelector(".faq-question");
 
             button.addEventListener("click", () => {
                 const alreadyOpen = item.classList.contains("is-open");
-
-                items.forEach((currentItem) => applyState(currentItem, false));
-
-                if (!alreadyOpen) {
-                    applyState(item, true);
-                }
+                applyState(item, !alreadyOpen);
             });
         });
     };

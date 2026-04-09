@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.2fr);
     gap: 30px;
+    margin-top: 46px;
 }
 
 .author-main-card {
@@ -70,7 +71,7 @@
 }
 
 .stat-card--muted {
-    background: linear-gradient(180deg, #ffffff 0%, #f5fbff 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
 .stat-wide {
@@ -96,19 +97,19 @@
 
 .stat-title {
     margin: 0 0 14px 0;
-    font-size: 30px;
-    line-height: 1.04;
+    font-size: 28px;
+    line-height: 1.08;
     font-weight: 800;
     letter-spacing: -0.03em;
-    color: var(--accent-hover);
+    color: var(--text-primary);
 }
 
 .stat-desc {
     margin: 0;
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.65;
     color: var(--text-secondary);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .text-on-accent {
@@ -122,16 +123,8 @@
 
 
 .stat-card--quote {
-    flex-direction: row;
-    align-items: center;
-    gap: 22px;
+    justify-content: center;
     background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-}
-
-.quote-icon {
-    width: 58px;
-    height: 58px;
-    flex-shrink: 0;
 }
 
 .quote-text {

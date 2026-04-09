@@ -12,8 +12,8 @@ Use this after each frontend patch to guard against regressions.
 - [ ] Sticky header stays visible on scroll and does not overlap content incorrectly.
 - [ ] Navigation links highlight/active state behaves correctly while scrolling.
 - [ ] Nav highlight pill animates on desktop hover/click.
-- [ ] Hero, About, Benefits, FAQ, Footer spacing and alignment look unchanged.
-- [ ] Benefits cards in resting state do not look like gray/tinted plates (no permanent card underlay).
+- [ ] Hero, About, Benefits, FAQ, Footer spacing/alignment follow the updated rhythm (more title breathing room, consistent section paddings).
+- [ ] Benefits section background reads neutral (not a gray slab), while cards remain clearly separated on light/low-quality displays.
 - [ ] Hover lift on stats/cards/FAQ feels stable (no jitter or slow post-reveal hover response).
 
 ## 3) Mobile layout (< 769px)
@@ -37,14 +37,16 @@ Use this after each frontend patch to guard against regressions.
 - [ ] With reduced motion enabled, counters render final values immediately and transitions are effectively disabled.
 - [ ] Benefits carousel prev/next buttons scroll cards as expected.
 - [ ] Carousel progress indicator updates while scrolling.
-- [ ] FAQ accordion opens/closes correctly; only one item remains open at a time; item 3 is open by default.
+- [ ] FAQ accordion opens/closes correctly from a fully collapsed initial state.
+- [ ] FAQ items toggle independently and keep correct `aria-expanded`/`aria-hidden` state.
+- [ ] FAQ height animation remains smooth when opening/closing one or multiple items.
 
 ## 7) Asset/path checks
 - [ ] About wave background is visible (path resolves from module CSS via `../images/wave.svg`).
 
 ## 8) Breakpoint regression check
 - [ ] Layout remains identical at `1100px`, `768px`, and `560px` breakpoints.
-- [ ] No unintended typography/color/spacing/shadow changes.
+- [ ] No unintended typography/color/spacing/shadow changes beyond approved polish updates (hero scale, About typography cleanup, benefits card contrast).
 - [ ] No clipping/overflow issues introduced.
 
 ## 9) Static deployment check
