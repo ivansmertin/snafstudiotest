@@ -4,24 +4,39 @@
 This repository contains a single-page static website for **SNAF STUDIO** (Russian-language marketing/personal studio landing page) focused on design, frontend implementation, and launch support.
 
 ## Current architecture summary
-- **HTML:** One document (`index.html`) containing all page sections and an inline `<script>` for interactivity.
-- **CSS:** One monolithic stylesheet (`styles.css`) with variables, shared UI, section styles, animation rules, and responsive breakpoints.
+- **HTML:** One document (`index.html`) containing all sections and loading external CSS/JS assets.
+- **CSS:** Legacy monolith (`styles.css`) is preserved, and modular styles are now loaded through `styles/main.css` (`@import`-based aggregator).
+- **JavaScript:** Interactive logic is now externalized in `js/main.js` (no framework, vanilla DOM APIs).
 - **Assets:** Local SVG/PNG files under `images/` referenced directly from HTML/CSS.
-- **Runtime model:** Client-side only, no backend or build pipeline observed.
+- **Runtime model:** Client-side only, no backend or build pipeline.
 
 ## Important constraints
-- Existing visual appearance and interaction behavior should be treated as baseline.
+- Existing visual appearance and interaction behavior are baseline and must not regress.
 - Section IDs are used for anchor navigation and scrollspy; changing them is high risk.
-- JavaScript currently depends on specific class names and DOM structure.
-- CSS is centralized; selector edits can have broad impact.
+- JavaScript depends on existing class names and DOM structure.
+- CSS selector names and ordering are compatibility-sensitive.
 
 ## Deployment assumptions (observed/probable)
 - Observed: all paths are relative and static-host friendly.
-- Probable inference: intended deployment is a simple static host (e.g., GitHub Pages / Nginx static root / CDN bucket) with no compilation step.
+- Confirmed: site works as plain static files (no transpilation, no bundling).
 
 ## Known current files
 - `index.html`
-- `styles.css`
+- `styles.css` (legacy/original stylesheet retained)
+- `styles/main.css`
+- `styles/tokens.css`
+- `styles/base.css`
+- `styles/utilities.css`
+- `styles/header.css`
+- `styles/sections.css`
+- `styles/hero.css`
+- `styles/about.css`
+- `styles/benefits.css`
+- `styles/faq.css`
+- `styles/footer.css`
+- `styles/motion.css`
+- `styles/responsive.css`
+- `js/main.js`
 - `images/logo.svg`
 - `images/ivan.png`
 - `images/heart-icon.svg`
@@ -31,14 +46,9 @@ This repository contains a single-page static website for **SNAF STUDIO** (Russi
 
 ## Current frontend stack
 - Semantic HTML5
-- Vanilla CSS (custom properties, media queries, transitions/animations)
-- Vanilla JavaScript (inline in `index.html`) using DOM APIs and IntersectionObserver
+- Vanilla CSS with custom properties, media queries, transitions/animations, and CSS `@import`
+- Vanilla JavaScript (`js/main.js`) using DOM APIs and IntersectionObserver
 - Google Fonts (`Montserrat`) via external stylesheet link
-
-## Likely future refactor goals
-- Extract inline JavaScript from `index.html` into a dedicated script file while preserving behavior.
-- Split `styles.css` into logical modules (base/layout/components/sections/responsive) without changing output.
-- Improve maintainability/testability of interactive logic (menu, scrollspy, reveal, carousel, FAQ).
 
 ## Known risks
 - **High risk:** changing class names/IDs used by JS handlers.

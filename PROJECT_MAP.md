@@ -3,8 +3,28 @@
 ## Current file tree
 ```text
 .
+├── AGENTS.md
+├── PROJECT_MAP.md
+├── QA_CHECKLIST.md
+├── SPEC.md
 ├── index.html
+├── js/
+│   └── main.js
 ├── styles.css
+├── styles/
+│   ├── about.css
+│   ├── base.css
+│   ├── benefits.css
+│   ├── faq.css
+│   ├── footer.css
+│   ├── header.css
+│   ├── hero.css
+│   ├── main.css
+│   ├── motion.css
+│   ├── responsive.css
+│   ├── sections.css
+│   ├── tokens.css
+│   └── utilities.css
 └── images/
     ├── heart-icon.svg
     ├── ivan.png
@@ -15,13 +35,23 @@
 ```
 
 ## File responsibilities
-- `index.html` — Entire page markup, all semantic sections, and inline JavaScript behavior.
-- `styles.css` — Global design tokens, layout, components, animations, and responsive rules.
-- `images/logo.svg` — Brand logo used in header/footer.
-- `images/ivan.png` — Author portrait in “Обо мне”.
-- `images/heart-icon.svg` — Decorative icon in quote/stat card.
-- `images/wave.svg` — Decorative wave background asset.
-- `images/vk.svg`, `images/tg.svg` — Social icon assets (not all social icons are asset-backed; some are inline SVG/text).
+- `index.html` — Entire page markup and static asset links (`styles/main.css`, `js/main.js`).
+- `styles.css` — Preserved legacy monolithic stylesheet (kept for compatibility/history).
+- `styles/main.css` — CSS aggregator with ordered `@import` statements only.
+- `styles/tokens.css` — CSS custom properties (`:root`).
+- `styles/base.css` — Reset/base rules, body, image, container, anchor offset primitives.
+- `styles/utilities.css` — Shared button and glow utility rules.
+- `styles/header.css` — Header, nav, burger, contacts, social icon rules.
+- `styles/sections.css` — Shared section paddings and common section headings.
+- `styles/hero.css` — Hero-specific layout and component styling.
+- `styles/about.css` — About/author/stats styles and section-local `floatCard` keyframes.
+- `styles/benefits.css` — Carousel controls/cards/progress styles.
+- `styles/faq.css` — FAQ accordion and bottom CTA styles.
+- `styles/footer.css` — Footer layout, links, socials, metadata styles.
+- `styles/motion.css` — Reveal motion classes and reduced-motion overrides.
+- `styles/responsive.css` — Width breakpoint media queries (`1100px`, `768px`, `560px`).
+- `js/main.js` — All interactive behavior (menu, nav highlight/scrollspy, reveal/counters, carousel, FAQ).
+- `images/*` — Static brand/decorative/portrait assets.
 
 ## Key page sections in `index.html`
 1. **Sticky header** (`#top`) with logo, desktop nav, mobile burger menu, contacts, and social links.
@@ -31,7 +61,7 @@
 5. **FAQ** (`#faq`) accordion-style questions/answers plus bottom CTA block.
 6. **Footer** with contacts, legal links placeholders, social links, and copyright.
 
-## Inline JavaScript behavior map (in `index.html`)
+## JavaScript behavior map (`js/main.js`)
 - Header offset sync for anchor scrolling.
 - Mobile burger menu open/close state and body scroll lock.
 - Nav highlight pill + hover/focus/current state handling.
@@ -40,25 +70,16 @@
 - Benefits carousel controls and progress bar sync.
 - FAQ accordion with ARIA state + animated panel heights.
 
-## Style zones in `styles.css`
-- `:root` design tokens (colors, radii, shadows, motion vars, header offset).
-- Base/reset rules (`*`, `html`, `body`, `img`, `.container`).
-- Shared UI (`.btn`, `.surface-glow`, common patterns).
-- Header/navigation/mobile menu.
-- Hero section.
-- Author/stats section.
-- Benefits carousel section.
-- FAQ + CTA block.
-- Footer.
-- Reveal animation utilities.
-- Responsive breakpoints (`max-width: 1100px`, `768px`, `560px`) + reduced-motion adjustments.
-
-## Asset inventory (`images/`)
-- Total assets: 6
-- Formats: SVG (5), PNG (1)
-- Usage profile: branding, portrait, decorative icons/background accents, social marks.
-
-## Likely future extraction targets (documentation only)
-- Potential JS extraction target: `scripts/main.js` (or similar single file first).
-- Potential CSS extraction structure: `styles/base.css`, `styles/layout.css`, `styles/components.css`, `styles/sections/*.css`, then optional bundle step **only if explicitly approved**.
-- For now, keep current monolithic files as source of truth.
+## CSS module load order (`styles/main.css`)
+1. `tokens.css`
+2. `base.css`
+3. `utilities.css`
+4. `header.css`
+5. `sections.css`
+6. `hero.css`
+7. `about.css`
+8. `benefits.css`
+9. `faq.css`
+10. `footer.css`
+11. `motion.css`
+12. `responsive.css`
