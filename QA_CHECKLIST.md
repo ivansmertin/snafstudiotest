@@ -6,6 +6,7 @@ Use this after each frontend patch to guard against regressions.
 - [ ] `index.html` loads `styles/main.css` with no 404.
 - [ ] `index.html` loads `js/main.js` with `defer` and no 404.
 - [ ] No broken image links (check logo, portrait, icons, decorative graphics).
+- [ ] Header/mobile/footer social icons render local recognizable logos from `images/vk.svg` and `images/tg.svg`.
 - [ ] Browser console has no errors.
 
 ## 2) Desktop layout (>= 769px)
@@ -13,7 +14,7 @@ Use this after each frontend patch to guard against regressions.
 - [ ] Navigation links highlight/active state behaves correctly while scrolling.
 - [ ] Nav highlight pill animates on desktop hover/click.
 - [ ] Hero, About, Benefits, FAQ, Footer spacing/alignment follow the updated rhythm (more title breathing room, consistent section paddings).
-- [ ] Benefits section background reads neutral (not a gray slab), while cards remain clearly separated on light/low-quality displays.
+- [ ] Benefits section background reads neutral (no gray slab effect), and resting `.carousel-card` has no permanent fill and no permanent box-shadow.
 - [ ] Hover lift on stats/cards/FAQ feels stable (no jitter or slow post-reveal hover response).
 
 ## 3) Mobile layout (< 769px)
@@ -43,6 +44,7 @@ Use this after each frontend patch to guard against regressions.
 
 ## 7) Asset/path checks
 - [ ] About wave background is visible (path resolves from module CSS via `../images/wave.svg`).
+- [ ] About quote card shows subtle heart accent (`images/heart-icon.svg`) without breaking spacing.
 
 ## 8) Breakpoint regression check
 - [ ] Layout remains identical at `1100px`, `768px`, and `560px` breakpoints.

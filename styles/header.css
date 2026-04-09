@@ -218,23 +218,11 @@
     }
 }
 
-.social-icon--vk span,
-.footer-social.social-icon--vk span {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-}
-
-.social-icon--tg svg,
-.footer-social.social-icon--tg svg {
-    width: 18px;
-    height: 18px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.social-icon img,
+.footer-social img {
+    width: 20px;
+    height: 20px;
+    display: block;
 }
 
 .mobile-menu-meta {

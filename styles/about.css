@@ -124,7 +124,20 @@
 
 .stat-card--quote {
     justify-content: center;
+    gap: 12px;
     background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.quote-accent {
+    width: 20px;
+    height: 20px;
+    opacity: 0.72;
+}
+
+.quote-accent img {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .quote-text {
