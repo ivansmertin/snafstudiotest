@@ -3,17 +3,17 @@
 --------------------------------- */
 
 .hero-section {
-    padding: 28px 0 56px 0;
+    padding: 24px 0 64px 0;
 }
 
 .author-section,
 .benefits-section,
 .faq-section {
-    padding: 56px 0;
+    padding: 64px 0;
 }
 
 .section-title {
-    margin: 0 0 16px 0;
+    margin: 0 0 24px 0;
     font-size: clamp(36px, 4vw, 58px);
     line-height: 1.04;
     font-weight: 800;
@@ -22,7 +22,7 @@
 }
 
 .section-subtitle {
-    margin: 8px 0 0 0;
+    margin: 0;
     max-width: 720px;
     font-size: 19px;
     line-height: 1.65;
